@@ -82,7 +82,7 @@ ${answer.projectDescription}
 
 ## Table of Contents
 
-* [Instalation](#installation)
+* [Installation](#installation)
 
 * [Usage](#usage)
 
@@ -102,13 +102,15 @@ ${answer.installDep}
 
 ## Usage
 
-![image](https://user-images.githubusercontent.com/71519918/99867989-1dc41800-2b84-11eb-921a-5be861e31990.png)
+![image](https://user-images.githubusercontent.com/71519918/99868688-494a0100-2b8a-11eb-9b47-3d3e9c3afb22.png)
 
 ${answer.usingRepo}
 
 ## License
 
 ${answer.license}
+
+![image](https://user-images.githubusercontent.com/71519918/99868729-a80f7a80-2b8a-11eb-9742-53c2264f0cf3.png)
 
 ## Contributing
 
@@ -118,9 +120,7 @@ ${answer.contributeRepo}
 
 To run tests, run the following command:
 
-'''
 ${answer.commandTest}
-'''
 
 ## Questions
 
