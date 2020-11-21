@@ -7,7 +7,7 @@ const util = require ('util');
 const writeFileAsync = util.promisify(fs.writeFile);
 
 //Ask user for user input in an array of questions
-const questions = () =>
+const questions = () => {
     inquirer.prompt([
         {
             type: "input",
@@ -37,6 +37,7 @@ const questions = () =>
                 "APACHE 2.0",
                 "GPL 3.0",
                 "BSD 3",
+                "none"
             ],
             name: "license"
         },
@@ -60,65 +61,71 @@ const questions = () =>
             message: "What does the user need to know about contributing to the repo?",
             name: "contributeRepo"
         },
-    ]);
+    ]).then(function(answer) {
+        console.log(answer);
+        let README = generateREADME(answer);
+        writeFileAsync("README.md", README).then(
+            err => console.log("Successfully wrote to file README.")
+        );
+    })
+}
 
 
 // function to write README file
-const generateREADME = (answer) =>
-    `
-    #  ${answer.projectName}
+function generateREADME (answer) {
+    let READMEString =
+`# ${answer.projectName}
 
-    ##${answer.projectDescription}
+## ${answer.projectDescription}
 
-    ##Table of Contents
+## Table of Contents
 
-    *[Instalation]
+* [Instalation](#installation)
 
-    *
+* [Usage](#usage)
 
-    *
+* [License](#license)
 
-    *
+* [Contributing](#contributing)
 
-    *
+* [Tests](#tests)
 
-    *
+* [Questions](#questions)
 
-    ##Installation
+## Installation
 
-        To install neccessary dependencies, run the following command:
+To install neccessary dependencies, run the following command:
 
-    '''
-    ${answer.installDep}
-    '''
+'''
+${answer.installDep}
+'''
 
-    ##Usage
+## Usage
 
-    ${answer.usingRepo}
+${answer.usingRepo}
 
-    ##License
+## License
 
-    ${answer.license}
+${answer.license}
 
-    ##Contributing
+## Contributing
 
-    ${answer.contributeRepo}
+${answer.contributeRepo}
 
-    ## Tests
+## Tests
 
-    To run tests, run the following command:
+To run tests, run the following command:
 
-    '''
-    ${answer.commandTest}
-    '''
+'''
+${answer.commandTest}
+'''
 
-    ##Questions
+## Questions
 
-    If you have any questions about the repo, please open an issue or contact me directly at ${answer.email}.
-    You can find more of my work at ${answer.gitHubName}
-    `;
+If you have any questions about the repo, please open an issue or contact me directly at <${answer.email}>.
+You can find more of my work at ${answer.gitHubName} https://github.com/Vlady14.
+`
+    return(READMEString)
+}
 
-questions()
-.then((answer) => writeFileAsync('README.md', generateREADME(answer)))
-.then(() => console.log("Successfully wrote to the README.md"))
-.catch((err) => console.error(err));
+questions();
