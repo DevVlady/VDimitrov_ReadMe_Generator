@@ -6,6 +6,8 @@ This project uses prompts from user & APACHE 2.0 license to generate a README fi
 
 ## Table of Contents
 
+* [Video](#video)
+
 * [Installation](#installation)
 
 * [Usage](#usage)
@@ -17,6 +19,10 @@ This project uses prompts from user & APACHE 2.0 license to generate a README fi
 * [Tests](#tests)
 
 * [Questions](#questions)
+
+## Video
+
+Link: https://drive.google.com/file/d/11Sg4hl2hFFHeQS-NjahUN3XiV9bood3p/view
 
 ## Installation
 

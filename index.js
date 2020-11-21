@@ -82,6 +82,8 @@ ${answer.projectDescription}
 
 ## Table of Contents
 
+* [Video](#video)
+
 * [Installation](#installation)
 
 * [Usage](#usage)
@@ -94,9 +96,11 @@ ${answer.projectDescription}
 
 * [Questions](#questions)
 
-## Installation
+## Video
 
-To install neccessary dependencies, run the following command:
+Link: https://drive.google.com/file/d/11Sg4hl2hFFHeQS-NjahUN3XiV9bood3p/view
+
+## Installation
 
 ${answer.installDep}
 
@@ -117,8 +121,6 @@ ${answer.license}
 ${answer.contributeRepo}
 
 ## Tests
-
-To run tests, run the following command:
 
 ${answer.commandTest}
 
