@@ -2,9 +2,10 @@
 const inquirer = require ('inquirer');
 const fs = require ('fs');
 const util = require ('util');
+const { generate } = require('rxjs');
 
 //Write fileASYNC variable
-const writeFileAsync = util.promisify(fs.writeFile());
+const writeFileAsync = util.promisify(fs.writeFile);
 
 //Ask user for user input in an array of questions
 const questions = () => {
@@ -43,12 +44,12 @@ const questions = () => {
         {
             type: "command",
             message: "What command should be run to install dependencies?",
-            name: ""
+            name: "installDep"
         },
         {
             type: "command",
             message: "What command should be run to run tests?",
-            name: ""
+            name: "commandTest"
         },
         {
             type: "input",
@@ -61,13 +62,68 @@ const questions = () => {
             name: "contributeRepo"
         }
     ]).then(function(answer) {
-        console.log(answer)
+        console.log(answer);
+        let README = generateREADME(answer);
+        //Console log README
+        console.log(README);
     })
 }
 
+//Calling the questions function
+questions();
+
 
 // function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(README, answer) {
+    let READMEString = `
+    # ${answer.projectName}
+
+    ## ${answer.projectDescription}
+
+    ## Table of Contents
+
+    *
+
+    *
+
+    *
+
+    *
+
+    *
+
+    *
+
+    ## Installation
+
+    To install neccessary dependencies, run the following command:
+
+    ${answer.installDep}
+
+    ## Usage
+
+    ${answer.usingRepo}
+
+    ## License
+
+    ${answer.license}
+
+    ## Contributing
+
+    ${answer.contributeRepo}
+
+    ## Tests
+
+    To run tests, run the following command:
+
+    ${answer.commandTest}
+
+    ## Questions
+
+    If you have any questions about the repo, please open an issue or contact me directly at ${answer.email}.
+    You can find more of my work at ${answer.gitHubName}
+    `
+    return(READMEString);
 }
 
 // function to initialize program
