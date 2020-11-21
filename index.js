@@ -2,13 +2,12 @@
 const inquirer = require ('inquirer');
 const fs = require ('fs');
 const util = require ('util');
-const { generate } = require('rxjs');
 
 //Write fileASYNC variable
 const writeFileAsync = util.promisify(fs.writeFile);
 
 //Ask user for user input in an array of questions
-const questions = () => {
+const questions = () =>
     inquirer.prompt([
         {
             type: "input",
@@ -60,31 +59,20 @@ const questions = () => {
             type: "input",
             message: "What does the user need to know about contributing to the repo?",
             name: "contributeRepo"
-        }
-    ]).then(function(answer) {
-        console.log(answer);
-        let README = generateREADME(answer);
-        //Console log README
-        console.log(README);
-    })
-}
-
-//Calling the questions function
-questions();
+        },
+    ]);
 
 
 // function to write README file
-function writeToFile(README, answer) {
-    let READMEString = `
-    # ${answer.projectName}
+const generateREADME = (answer) =>
+    `
+    #  ${answer.projectName}
 
-    ## ${answer.projectDescription}
+    ##${answer.projectDescription}
 
-    ## Table of Contents
+    ##Table of Contents
 
-    *
-
-    *
+    *[Instalation]
 
     *
 
@@ -94,21 +82,25 @@ function writeToFile(README, answer) {
 
     *
 
-    ## Installation
+    *
 
-    To install neccessary dependencies, run the following command:
+    ##Installation
 
+        To install neccessary dependencies, run the following command:
+
+    '''
     ${answer.installDep}
+    '''
 
-    ## Usage
+    ##Usage
 
     ${answer.usingRepo}
 
-    ## License
+    ##License
 
     ${answer.license}
 
-    ## Contributing
+    ##Contributing
 
     ${answer.contributeRepo}
 
@@ -116,20 +108,17 @@ function writeToFile(README, answer) {
 
     To run tests, run the following command:
 
+    '''
     ${answer.commandTest}
+    '''
 
-    ## Questions
+    ##Questions
 
     If you have any questions about the repo, please open an issue or contact me directly at ${answer.email}.
     You can find more of my work at ${answer.gitHubName}
-    `
-    return(READMEString);
-}
+    `;
 
-// function to initialize program
-function init() {
-
-}
-
-// function call to initialize program
-init();
+questions()
+.then((answer) => writeFileAsync('README.md', generateREADME(answer)))
+.then(() => console.log("Successfully wrote to the README.md"))
+.catch((err) => console.error(err));
