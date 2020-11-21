@@ -123,8 +123,7 @@ ${answer.commandTest}
 ## Questions
 
 If you have any questions about the repo, please open an issue or contact me directly at <${answer.email}>.
-You can find more of my work at ${answer.gitHubName} https://github.com/Vlady14.
-`
+You can find more of my work at ${answer.gitHubName} https://github.com/Vlady14.`
     return(READMEString)
 }
 
