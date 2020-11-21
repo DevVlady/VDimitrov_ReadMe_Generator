@@ -76,7 +76,9 @@ function generateMarkdown (answer) {
     let READMEString =
 `# ${answer.projectName}
 
-## ${answer.projectDescription}
+## Description
+
+${answer.projectDescription}
 
 ## Table of Contents
 
@@ -96,11 +98,11 @@ function generateMarkdown (answer) {
 
 To install neccessary dependencies, run the following command:
 
-'''
 ${answer.installDep}
-'''
 
 ## Usage
+
+![image](https://user-images.githubusercontent.com/71519918/99867989-1dc41800-2b84-11eb-921a-5be861e31990.png)
 
 ${answer.usingRepo}
 
@@ -123,7 +125,7 @@ ${answer.commandTest}
 ## Questions
 
 If you have any questions about the repo, please open an issue or contact me directly at <${answer.email}>.
-You can find more of my work at ${answer.gitHubName} https://github.com/Vlady14.`
+You can find more of my work at ${answer.gitHubName} (https://github.com/Vlady14).`
     return(READMEString)
 }
 
