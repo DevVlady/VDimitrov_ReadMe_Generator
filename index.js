@@ -63,7 +63,7 @@ const questions = () => {
         },
     ]).then(function(answer) {
         console.log(answer);
-        let README = generateREADME(answer);
+        let README = generateMarkdown(answer);
         writeFileAsync("README.md", README).then(
             err => console.log("Successfully wrote to file README.")
         );
@@ -72,7 +72,7 @@ const questions = () => {
 
 
 // function to write README file
-function generateREADME (answer) {
+function generateMarkdown (answer) {
     let READMEString =
 `# ${answer.projectName}
 
