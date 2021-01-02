@@ -11,8 +11,23 @@ const questions = () => {
     inquirer.prompt([
         {
             type: "input",
-            message: "What is your GitHub username",
-            name: "gitHubName"
+            message: "What is the name of your project?",
+            name: "projectName"
+        },
+        {
+            type: "input",
+            message: "Please write a short description of your project?",
+            name: "projectDescription"
+        },
+        {
+            type: "input",
+            message: "Please provide image url if any?",
+            name: "imageUrl"
+        },
+        {
+            type: "input",
+            message: "Please provide a deploy link if available!",
+            name: "deployLink"
         },
         {
             type: "input",
@@ -21,13 +36,8 @@ const questions = () => {
         },
         {
             type: "input",
-            message: "What is your project's name?",
-            name: "projectName"
-        },
-        {
-            type: "input",
-            message: "Please write a short description of your project?",
-            name: "projectDescription"
+            message: "What technologies, programs, and or applications were used in this project?",
+            name: "technologies"
         },
         {
             type: "list",
@@ -53,13 +63,18 @@ const questions = () => {
         },
         {
             type: "input",
-            message: "What does the user need to know about using the repo?",
+            message: "Provide the name of this project that the user needs instructions to follow!",
             name: "usingRepo"
         },
         {
             type: "input",
-            message: "What does the user need to know about contributing to the repo?",
+            message: "Please list first and last name of all contributors to this project/repo?",
             name: "contributeRepo"
+        },
+        {
+            type: "input",
+            message: "What is your GitHub username",
+            name: "gitHubName"
         },
     ]).then(function(answer) {
         console.log(answer);
@@ -75,7 +90,6 @@ const questions = () => {
 function generateMarkdown (answer) {
     let READMEString =
 `# ${answer.projectName}
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Description
 
@@ -83,51 +97,59 @@ ${answer.projectDescription}
 
 ## Table of Contents
 
-* [Video](#video)
+* [License](#license)
+
+* [Image](#image)
+
+* [Website](#website)
 
 * [Installation](#installation)
 
 * [Usage](#usage)
 
-* [License](#license)
-
 * [Contributing](#contributing)
 
 * [Tests](#tests)
 
+* [Technologies](#technologies)
+
 * [Questions](#questions)
-
-## Video
-
-Link: https://drive.google.com/file/d/11Sg4hl2hFFHeQS-NjahUN3XiV9bood3p/view
-
-## Installation
-
-${answer.installDep}
-
-## Usage
-
-![image](https://user-images.githubusercontent.com/71519918/99868688-494a0100-2b8a-11eb-9b47-3d3e9c3afb22.png)
-
-${answer.usingRepo}
 
 ## License
 
-${answer.license}
+This project is licensed under the ${answer.license} license
 
-![image](https://user-images.githubusercontent.com/71519918/99868729-a80f7a80-2b8a-11eb-9742-53c2264f0cf3.png)
+## Image
+
+${answer.imageUrl}
+
+## Website
+
+Deploy Link: ${answer.deployLink}
+
+## Installation
+
+Run the following command "${answer.installDep}" in your terminal to install any dependencies for this application
+
+## Usage
+
+Steps on how to properly use the ${answer.usingRepo} application are provided below.
 
 ## Contributing
 
-${answer.contributeRepo}
+This project/repo has been contributed by ${answer.contributeRepo}. Anyone can contribute to this project/repo by either reaching out to the owner or using the fork method through GitHub
 
 ## Tests
 
-${answer.commandTest}
+Run the following command "${answer.commandTest}" in your terminal to run tests for this application
+
+## Technologies
+
+Technologies, applications, and programs used in this project are ${answer.technologies}
 
 ## Questions
 
-If you have any questions about the repo, please open an issue or contact me directly at <${answer.email}>.
+If you have any questions about the project/repo, please open an issue or contact me directly at <${answer.email}>.
 You can find more of my work at ${answer.gitHubName} (https://github.com/Vlady14).`
     return(READMEString)
 }

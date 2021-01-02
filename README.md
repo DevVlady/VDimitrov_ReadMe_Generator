@@ -1,55 +1,64 @@
-# Generate README File
+# ReadME Generator
+
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Description
 
-This project uses prompts from user & APACHE 2.0 license to generate a README file and store this README.md file on your local machine.
+This application uses prompts in your integrated terminal to generate a readme file from the answers provided by the user and stores it on your local machine.
 
 ## Table of Contents
 
-* [Video](#video)
+* [License](#license)
+
+* [Image](#image)
+
+* [Website](#website)
 
 * [Installation](#installation)
 
 * [Usage](#usage)
 
-* [License](#license)
-
 * [Contributing](#contributing)
 
 * [Tests](#tests)
 
+* [Technologies](#technologies)
+
 * [Questions](#questions)
-
-## Video
-
-Link: https://drive.google.com/file/d/11Sg4hl2hFFHeQS-NjahUN3XiV9bood3p/view
-
-## Installation
-
-This project requires an installation of 'node.js' and 'node inquerier' which can be done by running the following command in your terminal "npm install"
-
-## Usage
-
-![image](https://user-images.githubusercontent.com/71519918/99868688-494a0100-2b8a-11eb-9b47-3d3e9c3afb22.png)
-
-To create a successful README file you will need to run 'node index.js' in your terminal.
 
 ## License
 
-APACHE 2.0
+This project is licensed under the APACHE 2.0 license
 
-![image](https://user-images.githubusercontent.com/71519918/99868729-a80f7a80-2b8a-11eb-9742-53c2264f0cf3.png)
+## Image
+
+![image](https://user-images.githubusercontent.com/71519918/103468723-cfc53700-4d21-11eb-8528-3de89e44c144.png)
+
+## Website
+
+Deploy Link: N/A
+
+## Installation
+
+Run the following command "npm i" in your terminal to install any dependencies for this application
+
+## Usage
+
+Steps on how to properly use the professional readME generator application are provided below.
 
 ## Contributing
 
-In order to successfully contribute to this repo you will need to use the fork method from the orignal repo located on GitHub.
+This project/repo has been contributed by Vladimir Dimitrov. Anyone can contribute to this project/repo by either reaching out to the owner or using the fork method through GitHub
 
 ## Tests
 
-To run any tests for this project please run the following command in your terminal "npm test"
+Run the following command "npm test" in your terminal to run tests for this application
+
+## Technologies
+
+Technologies, applications, and programs used in this project are JavaScript & Node.js
 
 ## Questions
 
-If you have any questions about the repo, please open an issue or contact me directly at <vladimir.s.dimitrov14@gmail.com>.
+If you have any questions about the project/repo, please open an issue or contact me directly at <vladimir.s.dimitrov14@gmail.com>.
 You can find more of my work at Vlady14 (https://github.com/Vlady14).
