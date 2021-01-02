@@ -46,6 +46,11 @@ Run the following command "npm i" in your terminal to install any dependencies f
 
 Steps on how to properly use the professional readME generator application are provided below.
 
+* START application by running the following command "node index.js" in your terminal.
+* THEN answer all the following questions listed in your terminal.
+* WHEN last question is answered then the readME file will be generated.
+* USE template and paste in your file.
+
 ## Contributing
 
 This project/repo has been contributed by Vladimir Dimitrov. Anyone can contribute to this project/repo by either reaching out to the owner or using the fork method through GitHub
