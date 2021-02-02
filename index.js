@@ -97,23 +97,23 @@ ${answer.projectDescription}
 
 ## Table of Contents
 
-* [License](#license)
+[License](#license)
 
-* [Image](#image)
+[Image](#image)
 
-* [Website](#website)
+[Website](#website)
 
-* [Installation](#installation)
+[Installation](#installation)
 
-* [Usage](#usage)
+[Usage](#usage)
 
-* [Contributing](#contributing)
+[Contributing](#contributing)
 
-* [Tests](#tests)
+[Tests](#tests)
 
-* [Technologies](#technologies)
+[Technologies](#technologies)
 
-* [Questions](#questions)
+[Questions](#questions)
 
 ## License
 
@@ -150,7 +150,7 @@ Technologies, applications, and programs used in this project are ${answer.techn
 ## Questions
 
 If you have any questions about the project/repo, please open an issue or contact me directly at <${answer.email}>.
-You can find more of my work at ${answer.gitHubName} (https://github.com/Vlady14).`
+You can find more of my work at ${answer.gitHubName} (https://github.com/DevVlady).`
     return(READMEString)
 }
 

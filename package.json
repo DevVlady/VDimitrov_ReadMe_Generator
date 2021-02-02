@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vlady14/VDimitrov_ReadMe_Generator.git"
+    "url": "git+https://github.com/DevVlady/VDimitrov_ReadMe_Generator.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vlady14/VDimitrov_ReadMe_Generator/issues"
+    "url": "https://github.com/DevVlady/VDimitrov_ReadMe_Generator/issues"
   },
-  "homepage": "https://github.com/Vlady14/VDimitrov_ReadMe_Generator#readme",
+  "homepage": "https://github.com/DevVlady/VDimitrov_ReadMe_Generator#readme",
   "dependencies": {
     "inquirer": "^7.3.3"
   }
